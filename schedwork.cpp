@@ -131,7 +131,7 @@ bool placement(const AvailabilityMatrix &avail, int &x, int &y, DailySchedule &s
 
 bool confirmFree(size_t dailyNeed, size_t x, size_t section, size_t maxShifts, DailySchedule &sched, const AvailabilityMatrix &avail)
 {
-    bool flag;
+    bool banner;
     int temp = 0;
 
     if (avail[x][section])
@@ -158,12 +158,12 @@ bool confirmFree(size_t dailyNeed, size_t x, size_t section, size_t maxShifts, D
         bool checks = (temp >= maxShifts);
         if (checks)
         {
-            flag = false;
+            banner = false;
         }
         else
         {
-            flag = true;
+            banner = true;
         }
     }
-    return flag;
+    return banner;
 }
