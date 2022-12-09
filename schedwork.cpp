@@ -61,7 +61,7 @@ bool schedule(
     
 }
 
-bool help(int size, const AvailabilityMatrix &av, int shifts, DailySchedule &schedule)
+bool help(int size, const AvailabilityMatrix &avail, int maxShifts, DailySchedule &sched)
 {
     int rows, columns = 0;
     bool available;
@@ -96,7 +96,7 @@ bool help(int size, const AvailabilityMatrix &av, int shifts, DailySchedule &sch
     return false;
 }
 
-bool placement(const AvailabilityMatrix &av, int &one, int &two, DailySchedule &schedule)
+bool placement(const AvailabilityMatrix &avail, int &x, int &y, DailySchedule &sched)
 {
     x = 0;
     do
@@ -129,7 +129,7 @@ bool placement(const AvailabilityMatrix &av, int &one, int &two, DailySchedule &
     return false;
 }
 
-bool confirmFree(size_t dailyNeed, size_t x, size_t sec, size_t shifts, DailySchedule &schedule, const AvailabilityMatrix &av)
+bool confirmFree(size_t dailyNeed, size_t x, size_t section, size_t maxShifts, DailySchedule &sched, const AvailabilityMatrix &avail)
 {
     bool banner;
     int temp = 0;
